@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=3 uid="uid://diylmspo85ryi"]
+
+[ext_resource type="Texture2D" uid="uid://b14bxara07amd" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="1_r03h3"]
+[ext_resource type="Script" path="res://Scenes/crabby.gd" id="1_u6v7t"]
+[ext_resource type="Texture2D" uid="uid://oqiv3d6rvpm3" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="2_afm0w"]
+[ext_resource type="Texture2D" uid="uid://b35ortoc31v4o" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="3_ueiev"]
+[ext_resource type="Texture2D" uid="uid://cx1i4pf58efmo" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 04.png" id="4_kc5vb"]
+[ext_resource type="Texture2D" uid="uid://b2sas4no5fuhe" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 05.png" id="5_xb2cc"]
+[ext_resource type="Texture2D" uid="uid://ciqry2vwoyg76" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 06.png" id="6_duhkb"]
+[ext_resource type="Texture2D" uid="uid://dbk128y7fceyc" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 07.png" id="7_mkljd"]
+[ext_resource type="Texture2D" uid="uid://dujheb388xaa2" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 08.png" id="8_jdvmq"]
+[ext_resource type="Texture2D" uid="uid://dhkc75ugpi6hw" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 09.png" id="9_mc01d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vuc8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r03h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_afm0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ueiev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kc5vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xb2cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_duhkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mkljd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jdvmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mc01d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqoro"]
+radius = 12.0
+
+[node name="Crabby" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_u6v7t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vuc8t")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.920068
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_dqoro")
+
+[node name="RayCast2Dl" type="RayCast2D" parent="."]
+target_position = Vector2(-22, 0)
+
+[node name="RayCast2Dr" type="RayCast2D" parent="."]
+target_position = Vector2(22, 0)

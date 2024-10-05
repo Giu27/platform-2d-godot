@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi76aohelk4ar"]
+[gd_scene load_steps=4 format=3 uid="uid://bi76aohelk4ar"]
 
 [ext_resource type="PackedScene" uid="uid://b28u0gnl80oie" path="res://levels/level1.tscn" id="1_kcsh0"]
 [ext_resource type="PackedScene" uid="uid://yqapjarb3t7l" path="res://Scenes/player.tscn" id="2_5nkqj"]
+[ext_resource type="PackedScene" uid="uid://diylmspo85ryi" path="res://Scenes/Crabby.tscn" id="3_ef1wb"]
 
 [node name="main" type="Node"]
 
 [node name="Level1" parent="." instance=ExtResource("1_kcsh0")]
 
 [node name="Player" parent="." instance=ExtResource("2_5nkqj")]
-position = Vector2(57, 483)
+position = Vector2(-27, 369)
+
+[node name="Enemy1" parent="." instance=ExtResource("3_ef1wb")]
+position = Vector2(391, 370)
